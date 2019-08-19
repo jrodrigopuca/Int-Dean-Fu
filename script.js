@@ -36,12 +36,15 @@ const hijos = (number)=>{
     return array.slice(1,array.length)
 }
 
-const desc= (number)=>{
-    // tengo que usar recursión
-    let children = hijos(number);
-    if (children != undefined){
-        console.log("no hay nada");
-    }
+
+
+const descendientes = (number)=>{
+    let dsc=hijos(number)
+    if (dsc == []) return;
+    dsc.forEach(e=>{
+        console.log(e);
+        return descendientes(e);
+    })
 }
 
 
