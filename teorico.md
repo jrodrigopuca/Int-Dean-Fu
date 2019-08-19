@@ -1,0 +1,3 @@
+a) Revisaría los tipos de datos (en especial para punteros, variables globales), las cosas que se están guardando en caché. Se podrían utilizar librerías a las que ya tiene acceso el usuario (por ejemplo por CDN), variables locales, procesos más modularizados.
+b) Revisaría como se estan ejecutando los procesos en el CPU, si es que se puede usar hilos o procesamiento en paralelo. Revisaría los ciclos, las llamadas a funciones y las condiciones de salida. Puede que existan tareas a la espera de respuestas se podría usar async
+c) Mayormente tiene que ver con problemas con el I/O. asi que revisaría los tamaños de los archivos y como se acceden a ellos. Se puede aplicar archivos más reducidos.
