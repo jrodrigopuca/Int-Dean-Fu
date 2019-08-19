@@ -16,38 +16,31 @@ let matrix = [
 
 // Dado un número dado, encontrar sus ancestros
 const ancestro = (number)=>{
+    let array= [];
+
     matrix.forEach(element => {
         element.forEach(e=>{
             if (element[0] != number){ //para evitar que elija el mismo número si es primero elemento (podría haber usado un 'for común' desde 1)
                 if (e == number){  
-                    console.log(element[0]);
+                    array.push(element[0]);
                 }
             }
         })
     })
+    return array;
 }
 
 // Dado un número dado, encontrar sus hijos 
 const hijos = (number)=>{   
-    console.log(matrix[number-1])
-
-    /*
-    matrix.forEach(element => {
-        if (element[0] == number){
-            console.log(element);
-        }
-    })
-    */
+    let array = matrix[number-1];
+    return array.slice(1,array.length)
 }
 
 const desc= (number)=>{
     // tengo que usar recursión
     let children = hijos(number);
     if (children != undefined){
-        console.log("a", children)
-        children.forEach(e=>{
-            return desc(children);
-        })
+        console.log("no hay nada");
     }
 }
 
