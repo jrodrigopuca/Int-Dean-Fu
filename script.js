@@ -36,21 +36,14 @@ const hijos = (number)=>{
     return array.slice(1,array.length)
 }
 
-
-
-const descendientes = (number)=>{
-    let array = [];
-    let dsc=hijos(number)
-    if (dsc == []) return;
-    dsc.forEach(e=>{
-        //console.log(e);
-        array.push(e)
-        return descendientes(e);
-
-    })
-    return array;
+// Dado un número dado, lista su descendencia.
+function desc(n){
+    let array=hijos(n) 
+    array.forEach(e=>{
+        console.log(e);
+        return desc(e);
+    })    
 }
-
 
 console.log("-- Punto 1 --");
 console.log(3,ancestro(3))
@@ -63,10 +56,10 @@ console.log(6,hijos(6))
 console.log(9,hijos(9))
 console.log(11,hijos(11))
 console.log("-- Punto 3 --");
-console.log("desc para 2:",descendientes(2))
-console.log("desc para 6:",descendientes(6))
-console.log("desc para 10:",descendientes(10))
-console.log("desc para 13:",descendientes(13))
+console.log("arriba desc para 2:",desc(2)); 
+console.log("arriba desc para 6:",desc(6)); 
+console.log("arriba desc para 10:",desc(10));  
+console.log("arriba desc para 13:",desc(13));  
 
 
 
