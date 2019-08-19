@@ -39,14 +39,34 @@ const hijos = (number)=>{
 
 
 const descendientes = (number)=>{
+    let array = [];
     let dsc=hijos(number)
     if (dsc == []) return;
     dsc.forEach(e=>{
-        console.log(e);
+        //console.log(e);
+        array.push(e)
         return descendientes(e);
+
     })
+    return array;
 }
 
+
+console.log("-- Punto 1 --");
+console.log(3,ancestro(3))
+console.log(5,ancestro(5))
+console.log(8,ancestro(8))
+console.log(12,ancestro(12))
+console.log("-- Punto 2 --");
+console.log(1,hijos(1))
+console.log(6,hijos(6))
+console.log(9,hijos(9))
+console.log(11,hijos(11))
+console.log("-- Punto 3 --");
+console.log("desc para 2:",descendientes(2))
+console.log("desc para 6:",descendientes(6))
+console.log("desc para 10:",descendientes(10))
+console.log("desc para 13:",descendientes(13))
 
 
 
